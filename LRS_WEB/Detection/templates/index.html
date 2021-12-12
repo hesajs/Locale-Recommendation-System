@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Locale Recommendation System</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/style.css" rel="stylesheet">
+	
+</head>
+<body>
+	<div class="firstblock">
+        <h2 class="title">LOCALE RECOMMENDATION SYSTEM</h2>
+        <div class="titleimg"><img src="../static/img/city.svg" width="452" height="254"></div>
+        <h2 class="titledesc">DISCOVER PLACES AROUND YOU</h2>
+        
+    </div>
+    <div class="secondblock">
+        <div class="container">
+            <form enctype="multipart/form-data" action= {% url 'Detection:detectScene' %} method = "POST">
+                {% csrf_token %}
+                {{var}}
+                {%if img%}
+                    <img src ="data:image/jpeg;base64,{{img}}">
+                {%endif%}
+                <input type="file" id="img" name="img" class="inputfile" accept="image/*">
+                <label for="img" class="button-54">SELECT IMAGE...</label>
+                <button class="button-24" role="button" type="Submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
