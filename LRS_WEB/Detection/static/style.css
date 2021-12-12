@@ -49,21 +49,38 @@ body {
   letter-spacing: 2px;
   text-decoration: none;
   text-transform: uppercase;
-  padding: 0.6rem 0.8rem;
-  
   color: #FF013C;
   cursor: pointer;
-  
-  position: relative;
+  position: absolute;
+  left: 0%;
+  transform: translate(0%, 13px);
   
 }
 
+.preview_box{
+  width: 300px;
+  min-height: 200px;
+  border: 2px solid #dddddd;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #cccccc;
+}
+.preview_image{
+  display: none;
+  width: 100%;
+}
 .container{
-  top: 60%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   
-  position: relative;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
 }
 .inputfile {
   width: 0.1px;
@@ -86,7 +103,8 @@ body {
 }
 
 .button-24 {
-  position: relative;
+  position: absolute;
+  right: 0%;
   background: #FF4742;
   border: 1px solid #FF4742;
   border-radius: 6px;

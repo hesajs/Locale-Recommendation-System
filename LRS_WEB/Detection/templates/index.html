@@ -17,13 +17,19 @@
         <div class="container">
             <form enctype="multipart/form-data" action= {% url 'Detection:detectScene' %} method = "POST">
                 {% csrf_token %}
-                {{var}}
                 {%if img%}
                     <img src ="data:image/jpeg;base64,{{img}}">
                 {%endif%}
-                <input type="file" id="img" name="img" class="inputfile" accept="image/*">
+                <div class="preview_box" id="previewContainer">
+                    <img src="" alt="Image Preview" class="preview_image">
+                    <span class="default_preview">Image</span>
+                </div>
+                <br>
+                <input type="file" id="img" name="img" class="inputfile" accept="image/*" >
                 <label for="img" class="button-54">SELECT IMAGE...</label>
-                <button class="button-24" role="button" type="Submit">Submit</button>
+                <button class="button-24" role="button" type="Submit">Submit</button><br>
+                <br><br>
+                {{var}}
             </form>
         </div>
     </div>

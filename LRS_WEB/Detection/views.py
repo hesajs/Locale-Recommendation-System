@@ -10,4 +10,4 @@ def detect(request):
         result = p.predictHTMLDirect(img)        
         return render(request, 'index.html',{"var":"The scene was identified as " + str(result)})
     else:
-        return render(request,'index.html',{"var":"Select Image"})
+        return render(request,'index.html',{"var":""})
