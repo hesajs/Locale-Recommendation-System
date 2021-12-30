@@ -18,21 +18,55 @@
             <form enctype="multipart/form-data" action= {% url 'Detection:detectScene' %} method = "POST">
                 {% csrf_token %}
                 {%if img%}
-                    <img src ="data:image/jpeg;base64,{{img}}">
-                {%endif%}
-                <div class="preview_box" id="previewContainer">
-                    <img src="" alt="Image Preview" class="preview_image">
-                    <span class="default_preview">Image</span>
-                </div>
+                    <img src ="data:image/jpeg;base64,{{img}}" width="300" height="200">
+                {%else%}
+                    <div class="preview_box" id="previewContainer">
+                        <img src="" alt="Image Preview" class="preview_image">
+                        <span class="default_preview">Image</span>
+                    </div>
+                {% endif %}
                 <br>
                 <input type="file" id="img" name="img" class="inputfile" accept="image/*" >
                 <label for="img" class="button-54">SELECT IMAGE...</label>
                 <button class="button-24" role="button" type="Submit">Submit</button><br>
                 <br><br>
-                {{var}}
+                
+                
+                {% if var %}
+                    <div style="text-align: center;">
+                        <h4>The scene was identified as</h4><br>
+                        <p style="font-weight: bold;text-transform: uppercase;color:#FF4742;font-size:24px;letter-spacing: 1px;">{{var}}</p><br><br>
+                        <a href="https://www.google.com/maps/search/{{var}}+near+me/" style="text-decoration: none;color: white;font-weight: bold;background-color: #FF4742;padding: 14px 25px;text-align: center;display: inline-block;">See Recommendations</a>
+                    </div>
+                {% endif %}
             </form>
         </div>
     </div>
-    
+    <script>
+        const inpFile = document.getElementById("img");
+        const previewCont = document.getElementById("previewContainer");
+        const previewImage = previewCont.querySelector(".preview_image");
+        const previewDefaultText = previewCont.querySelector(".default_preview");
+
+        inpFile.addEventListener("change", function(){
+            const file = this.files[0];
+
+            if(file){
+                const reader = new FileReader();
+                previewDefaultText.style.display = "none";
+                previewImage.style.display = "block";
+
+                reader.addEventListener("load", function(){
+                    console.log(this);
+                    previewImage.setAttribute("src", this.result);
+                });
+                reader.readAsDataURL(file);
+            }else{
+                previewDefaultText.style.display = null;
+                previewImage.style.display = null;
+            }
+        });
+
+    </script>
 </body>
 </html>

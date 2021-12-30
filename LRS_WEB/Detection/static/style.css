@@ -61,6 +61,7 @@ body {
   width: 300px;
   min-height: 200px;
   border: 2px solid #dddddd;
+  background-size: cover;
   margin-top: 15px;
   display: flex;
   align-items: center;
@@ -70,6 +71,7 @@ body {
 }
 .preview_image{
   display: none;
+  
   width: 100%;
 }
 .container{
@@ -139,3 +141,4 @@ body {
 .button-24:active {
   opacity: .5;
 }
+

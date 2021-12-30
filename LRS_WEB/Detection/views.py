@@ -8,6 +8,6 @@ def detect(request):
     if(request.method == 'POST'):
         img = request.FILES.get('img')
         result = p.predictHTMLDirect(img)        
-        return render(request, 'index.html',{"var":"The scene was identified as " + str(result)})
+        return render(request, 'index.html',{"var":str(result), "img":img})
     else:
         return render(request,'index.html',{"var":""})
