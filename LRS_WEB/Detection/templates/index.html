@@ -33,11 +33,19 @@
                 
                 
                 {% if var %}
+                    {% if var == "mountain" %}
+                    <div style="text-align: center;">
+                        <h4>The scene was identified as</h4><br>
+                        <p style="font-weight: bold;text-transform: uppercase;color:#FF4742;font-size:24px;letter-spacing: 1px;">{{var}}</p><br><br>
+                        <a href="https://www.google.com/maps/search/{{var}}+peaks+near+me/" style="text-decoration: none;color: white;font-weight: bold;background-color: #FF4742;padding: 14px 25px;text-align: center;display: inline-block;">See Recommendations</a>
+                    </div>
+                    {% else %}
                     <div style="text-align: center;">
                         <h4>The scene was identified as</h4><br>
                         <p style="font-weight: bold;text-transform: uppercase;color:#FF4742;font-size:24px;letter-spacing: 1px;">{{var}}</p><br><br>
                         <a href="https://www.google.com/maps/search/{{var}}+near+me/" style="text-decoration: none;color: white;font-weight: bold;background-color: #FF4742;padding: 14px 25px;text-align: center;display: inline-block;">See Recommendations</a>
                     </div>
+                    {% endif %}
                 {% endif %}
             </form>
         </div>
