@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Recommendations</title>
+    <link href="../static/mapstyle.css" rel="stylesheet">
+</head>
+<body>
+    {% csrf_token %}   
+    {% if var %}
+        {% if var == "mountain" %}
+            {% with lnk="https://www.google.com/maps/d/embed?mid=12QtyCWD71RkKk_YHFjUgkdeWuSktW7_H&ehbc=2E312F"%}
+            <div class="parent">
+                <div class="container">
+                    <h3>Here Are Other Places Similar to {{var}}</h3><br><br>
+                    <iframe src={{lnk}} width="640" height="480" style="border:none;"></iframe>
+                </div>
+            </div>
+            {% endwith%}
+        {% elif var == "buildings"%}
+            {% with lnk="https://www.google.com/maps/d/embed?mid=1miZ0UWoXbfyOkQSMzjFqquND7QK9sdii&ehbc=2E312F"%}
+            <div class="parent">
+                <div class="container">
+                    <h3>Here Are Other Similar {{var}} Locations</h3><br><br>
+                    <iframe src={{lnk}} width="640" height="480" style="border:none;"></iframe>
+                </div>
+            </div>{%endwith%}
+        {% elif var == "waterfall"%}
+            {% with lnk="https://www.google.com/maps/d/embed?mid=1qI9_aaGta9COEFxRxLXJROu-Pq6YdNXK&ehbc=2E312F"%}
+            <div class="parent">
+                <div class="container">
+                    <h3>Here Are Other Similar {{var}} Locations</h3><br><br>
+                    <iframe src={{lnk}} width="640" height="480" style="border:none;"></iframe>
+                </div>
+            </div>{%endwith%}
+        {% elif var == "forest"%}
+            {% with lnk="https://www.google.com/maps/d/embed?mid=1HjQtIuv_pPg7nsyqhyy3SB7aoYxTxmnt&ehbc=2E312F"%}
+            <div class="parent">
+                <div class="container">
+                    <h3>Here Are Other Similar {{var}} Locations</h3><br><br>
+                    <iframe src={{lnk}} width="640" height="480" style="border:none;"></iframe>
+                </div>
+            </div>{%endwith%}
+
+        {%endif%}
+	{%endif%}
+</body>
+</html>

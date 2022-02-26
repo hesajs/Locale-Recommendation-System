@@ -5,7 +5,7 @@ import torchvision.transforms as T
 
 class Predict:
     def __init__(self):
-        self.learn = load_learner("","model_acc_93.pkl")
+        self.learn = load_learner("","checkpoint-01.pkl")
     def predictHTMLDirect(self, img):
         img_pil = im.open(img)
         img_tensor = T.ToTensor()(img_pil)
