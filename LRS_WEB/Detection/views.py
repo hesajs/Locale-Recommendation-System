@@ -7,10 +7,10 @@ from Detection.predict import Predict
 p = Predict()
 def detect(request):
     if(request.method == 'POST'):
-        img = request.FILES.get('img')
-        result = p.predictHTMLDirect(img)
+        imag = request.FILES.get('img')
+        result = p.predictHTMLDirect(imag)
         request.session['var'] = str(result)
-        return render(request, 'index.html',{"var":str(result), "img":img})
+        return render(request, 'index.html',{"var":str(result), "imag":imag})
     else:
         return render(request,'index.html',{"var":""})
 

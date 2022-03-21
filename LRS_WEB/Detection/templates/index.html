@@ -17,8 +17,9 @@
         <div class="container">
             <form enctype="multipart/form-data" action= {% url 'Detection:detectScene' %} method = "POST">
                 {% csrf_token %}
-                {%if img%}
-                    <img src ="data:image/jpeg;base64,{{img}}" width="300" height="200">
+                
+                {%if imag%}
+                    <img src ="data:image/jpeg;base64,{{imag}}" width="300" height="200">
                 {%else%}
                     <div class="preview_box" id="previewContainer">
                         <img src="" alt="Image Preview" class="preview_image">
