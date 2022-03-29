@@ -12,7 +12,8 @@
             <div class="parent">
                 <div class="container">
                     <h3>Here Are Other Places Similar to {{var}}</h3><br><br>
-                    <iframe src={{lnk}} width="640" height="480" style="border:none;"></iframe>
+                    <iframe src={{lnk}} width="640" height="480" style="border:none;"></iframe><br><br>
+                    <a href={% url 'Detection:detectScene' %} style="text-decoration:none;font-size:16x;color:#FF4742;padding:8px;">Try Another Image</a>
                 </div>
             </div>
             {% endwith%}
@@ -22,6 +23,7 @@
                 <div class="container">
                     <h3>Here Are Other Similar {{var}} Locations</h3><br><br>
                     <iframe src={{lnk}} width="640" height="480" style="border:none;"></iframe>
+                    <br><br><a href={% url 'Detection:detectScene' %} style="text-decoration:none;font-size:16x;color:#FF4742;padding:8px;">Try Another Image</a>
                 </div>
             </div>{%endwith%}
         {% elif var == "waterfall"%}
@@ -30,6 +32,7 @@
                 <div class="container">
                     <h3>Here Are Other Similar {{var}} Locations</h3><br><br>
                     <iframe src={{lnk}} width="640" height="480" style="border:none;"></iframe>
+                    <br><br><a href={% url 'Detection:detectScene' %} style="text-decoration:none;font-size:16x;color:#FF4742;padding:8px;">Try Another Image</a>
                 </div>
             </div>{%endwith%}
         {% elif var == "forest"%}
@@ -38,9 +41,27 @@
                 <div class="container">
                     <h3>Here Are Other Similar {{var}} Locations</h3><br><br>
                     <iframe src={{lnk}} width="640" height="480" style="border:none;"></iframe>
+                    <br><br><a href={% url 'Detection:detectScene' %} style="text-decoration:none;font-size:16x;color:#FF4742;padding:8px;">Try Another Image</a>
                 </div>
             </div>{%endwith%}
-
+        {% elif var == "lake"%}
+            {% with lnk="https://www.google.com/maps/d/embed?mid=1GY5Q5mSanvMaPon6LE9QfXAc-wd0scMd&ehbc=2E312F"%}
+            <div class="parent">
+                <div class="container">
+                    <h3>Here Are Other Similar {{var}} Locations</h3><br><br>
+                    <iframe src={{lnk}} width="640" height="480" style="border:none;"></iframe>
+                    <br><br><a href={% url 'Detection:detectScene' %} style="text-decoration:none;font-size:16x;color:#FF4742;padding:8px;">Try Another Image</a>
+                </div>
+            </div>{%endwith%}
+        {% elif var == "conference_center"%}
+            {% with lnk="https://www.google.com/maps/d/embed?mid=1-Xc5BVOL61JnV78BioAXVbDhWzn181sg&ehbc=2E312F"%}
+            <div class="parent">
+                <div class="container">
+                    <h3>Here Are Other Similar {{var}} Locations</h3><br><br>
+                    <iframe src={{lnk}} width="640" height="480" style="border:none;"></iframe>
+                    <br><br><a href={% url 'Detection:detectScene' %} style="text-decoration:none;font-size:16x;color:#FF4742;padding:8px;">Try Another Image</a>
+                </div>
+            </div>{%endwith%}
         {%endif%}
 	{%endif%}
 </body>
